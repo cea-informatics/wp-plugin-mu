@@ -241,20 +241,56 @@ div.um-photo img,
     border-radius: 0 !important;
 }
 
-/* Onglets account */
-.um-account-side ul {
+/* Sidebar account */
+.um-account-side ul,
+.um-account-side li {
     border-radius: 0 !important;
+    background: var(--um-field-bg) !important;
 }
 
 .um-account-side li a {
     border-radius: 0 !important;
     transition: background 0.15s, color 0.15s;
+    color: var(--um-text) !important;
 }
 
-.um-account-side li.active a,
+.um-account-side li a span.um-account-title {
+    color: var(--um-text) !important;
+    transition: color 0.15s;
+}
+
+.um-account-side li a span.um-account-icon {
+    color:        var(--um-text) !important;
+    border-color: var(--um-border) !important;
+    transition:   color 0.15s;
+}
+
+/* Hover */
 .um-account-side li a:hover {
     background: var(--um-dark) !important;
     color:      var(--um-white) !important;
+}
+
+.um-account-side li a:hover span.um-account-title,
+.um-account-side li a:hover span.um-account-icon {
+    color:        var(--um-white) !important;
+    border-color: rgba(255,255,255,0.2) !important;
+}
+
+/* Actif — UM utilise .current sur le <a> */
+.um-account-side li a.current,
+.um-account-side li a.current:hover {
+    background:  var(--um-dark) !important;
+    color:       var(--um-white) !important;
+    font-weight: 700 !important;
+}
+
+.um-account-side li a.current span.um-account-title,
+.um-account-side li a.current:hover span.um-account-title,
+.um-account-side li a.current span.um-account-icon,
+.um-account-side li a.current:hover span.um-account-icon {
+    color:        var(--um-white) !important;
+    border-color: rgba(255,255,255,0.2) !important;
 }
 
 /* ═══════════════════════════════════════════════════════════════════

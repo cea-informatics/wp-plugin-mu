@@ -1,0 +1,144 @@
+/* ─── Variables CSS WPForms → 0 ──────────────────────────────────── */
+div.wpforms-container-full,
+div.wpforms-container-full .wpforms-form {
+    --wpforms-container-border-radius: 0px;
+    --wpforms-field-border-radius:     0px;
+    --wpforms-button-border-radius:    0px;
+
+    /* Palette Foxtown */
+    --wpforms-field-background-color:      #F4F4F4;
+    --wpforms-field-border-color:          #F4F4F4;
+    --wpforms-field-border-color-focus:    #F67521;
+    --wpforms-field-text-color:            #4b4f49;
+    --wpforms-button-background-color:     #0a0500;
+    --wpforms-button-background-color-alt: #F67521;
+    --wpforms-button-text-color:           #ffffff;
+    --wpforms-button-text-color-alt:       #ffffff;
+    --wpforms-label-color:                 #0a0500;
+    --wpforms-sublabel-color:              #888888;
+    --wpforms-error-color:                 #BD292A;
+    --wpforms-field-border-size:           2px;
+    --wpforms-field-size-input-height:     55px;
+    --wpforms-button-size-height:          55px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   RESET BORDER-RADIUS — tous les sélecteurs explicites
+═══════════════════════════════════════════════════════════════════ */
+div.wpforms-container-full,
+div.wpforms-container-full:not(:empty),
+div.wpforms-container-full .wpforms-form .wpforms-error-alert,
+.wp-core-ui div.wpforms-container-full textarea,
+.wp-core-ui div.wpforms-container-full .wpforms-page-button,
+.wp-core-ui div.wpforms-container-full .wpforms-field-description.wpforms-disclaimer-description,
+div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-select-style-modern .choices .choices__inner,
+div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-select-style-modern .choices.is-open:not(.is-flipped) .choices__inner,
+div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-select-style-modern .choices.is-open:not(.is-flipped) .choices__list--dropdown,
+div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-select-style-modern .choices.is-open.is-flipped .choices__inner,
+div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-select-style-modern .choices.is-open.is-flipped .choices__list--dropdown,
+div.wpforms-container-full .wpforms-form ul.wpforms-image-choices-classic .wpforms-image-choices-item img,
+div.wpforms-container-full .wpforms-form ul.wpforms-image-choices-classic .wpforms-image-choices-item label,
+div.wpforms-container-full .wpforms-form .wpforms-image-choices-classic .wpforms-image-choices-item .wpforms-image-choices-image img,
+div.wpforms-container.wpforms-container-full .wpforms-form ul.wpforms-icon-choices.wpforms-icon-choices-default .wpforms-icon-choices-icon,
+div.wpforms-container.wpforms-container-full .wpforms-form ul.wpforms-icon-choices.wpforms-icon-choices-default .wpforms-icon-choices-icon-bg,
+div.wpforms-container.wpforms-container-full .wpforms-form ul.wpforms-icon-choices.wpforms-icon-choices-modern li label,
+div.wpforms-container.wpforms-container-full .wpforms-form ul.wpforms-icon-choices.wpforms-icon-choices-classic li label,
+.wpforms-container .wpforms-form .choices .choices__inner,
+.wpforms-container .wpforms-form .choices.is-open .choices__list--dropdown,
+.wpforms-container .wpforms-form .choices.is-open .choices__inner,
+.wpforms-container .wpforms-image-choices-modern label:not(.wpforms-error),
+.wpforms-container-full ul.wpforms-icon-choices.wpforms-icon-choices-default .wpforms-icon-choices-icon,
+.wpforms-container-full ul.wpforms-icon-choices.wpforms-icon-choices-default .wpforms-icon-choices-icon-bg,
+.wpforms-container-full ul.wpforms-icon-choices.wpforms-icon-choices-modern li label,
+.wpforms-confirmation-container-full .wpforms-order-summary-container table.wpforms-order-summary-preview,
+div.wpforms-container-full .wpforms-form .wpforms-field-number-slider input[type="range"] {
+    border-radius: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CHAMPS
+═══════════════════════════════════════════════════════════════════ */
+div.wpforms-container-full input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
+div.wpforms-container-full select,
+div.wpforms-container-full textarea,
+div.wpforms-container-full .wpforms-form .choices .choices__inner {
+    background:    #F4F4F4 !important;
+    border:        2px solid #F4F4F4 !important;
+    border-radius: 0 !important;
+    color:         #4b4f49 !important;
+    box-shadow:    none !important;
+    font-size:     15px !important;
+    transition:    border-color 0.2s !important;
+}
+
+div.wpforms-container-full input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]):focus,
+div.wpforms-container-full select:focus,
+div.wpforms-container-full textarea:focus {
+    border-color: #F67521 !important;
+    outline:      none !important;
+    box-shadow:   none !important;
+}
+
+/* Labels */
+div.wpforms-container-full .wpforms-field-label {
+    font-weight: 600;
+    font-size:   13px;
+    color:       #0a0500 !important;
+}
+
+div.wpforms-container-full .wpforms-field-sublabel {
+    font-size: 12px;
+    color:     #888888 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BOUTON SUBMIT
+═══════════════════════════════════════════════════════════════════ */
+div.wpforms-container-full .wpforms-submit,
+.wp-core-ui div.wpforms-container-full .wpforms-page-button {
+    background:    #0a0500 !important;
+    color:         #ffffff !important;
+    border:        none !important;
+    border-radius: 0 !important;
+    min-height:    55px !important;
+    height:        55px !important;
+    padding:       0 32px !important;
+    font-size:     15px !important;
+    font-weight:   500 !important;
+    cursor:        pointer !important;
+    box-shadow:    none !important;
+    transition:    background 0.2s !important;
+    letter-spacing: 0 !important;
+}
+
+div.wpforms-container-full .wpforms-submit:hover,
+.wp-core-ui div.wpforms-container-full .wpforms-page-button:hover {
+    background: #F67521 !important;
+    color:      #ffffff !important;
+}
+
+/* Focus outline */
+.wp-core-ui div.wpforms-container-full .wpforms-page-button:focus:after {
+    border-radius: 0 !important;
+    border-color:  #F67521 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ERREURS
+═══════════════════════════════════════════════════════════════════ */
+div.wpforms-container-full .wpforms-error-alert,
+div.wpforms-container-full label.wpforms-error {
+    border-radius: 0 !important;
+    color:         #BD292A !important;
+    font-size:     13px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CONFIRMATION
+═══════════════════════════════════════════════════════════════════ */
+.wpforms-confirmation-container-full {
+    border-radius: 0 !important;
+    border-left:   4px solid #F67521 !important;
+    background:    #F4F4F4 !important;
+    color:         #4b4f49 !important;
+}
