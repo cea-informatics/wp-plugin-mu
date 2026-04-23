@@ -8,18 +8,6 @@ define('WPUM_PLUGIN_URL', plugin_dir_url(__FILE__));
 function wpum_enqueue_styles() {
     if (!function_exists('um_is_core_page')) return;
 
-    $pages = ['login', 'logout', 'members', 'password-reset', 'register', 'user'];
-    $is_um_page = false;
-
-    foreach ($pages as $page) {
-        if (um_is_core_page($page)) {
-            $is_um_page = true;
-            break;
-        }
-    }
-
-    if (!$is_um_page) return;
-
     wp_enqueue_style('wpum-style', WPUM_PLUGIN_URL . 'assets/ultimate.css', [], WPUM_VERSION);
 }
 

@@ -1,14 +1,13 @@
 /* ─── Variables ──────────────────────────────────────────────────── */
 :root {
-    --um-dark:    #323232;
-    --um-darker:  #1a1a1a;
-    --um-mid:     #555555;
-    --um-light:   #888888;
-    --um-border:  #d8d8d8;
-    --um-bg:      #f5f5f5;
-    --um-white:   #ffffff;
-    --um-radius:  4px;
-    --um-font:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --um-dark:   #323232;
+    --um-darker: #1a1a1a;
+    --um-mid:    #555555;
+    --um-light:  #888888;
+    --um-border: #d8d8d8;
+    --um-bg:     #f5f5f5;
+    --um-white:  #ffffff;
+    --um-font:   "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 /* ─── Global wrapper ─────────────────────────────────────────────── */
@@ -20,7 +19,7 @@
 .um .um-form {
     background: var(--um-white);
     border: 1px solid var(--um-border);
-    border-radius: var(--um-radius);
+    border-radius: 0 !important;
     padding: 32px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
@@ -35,14 +34,13 @@
     font-weight: 600;
     color: var(--um-darker);
     letter-spacing: 0.2px;
-    text-transform: none;
 }
 
 .um .um-field-area input.um-form-field,
 .um .um-field-area textarea.um-form-field,
 .um .um-field-area select.um-form-field {
     border: 1.5px solid var(--um-border) !important;
-    border-radius: var(--um-radius) !important;
+    border-radius: 0 !important;
     padding: 10px 12px !important;
     font-size: 14px !important;
     font-family: var(--um-font) !important;
@@ -52,32 +50,34 @@
     transition: border-color 0.15s, box-shadow 0.15s !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    height: 42px !important;
+}
+
+.um .um-field-area textarea.um-form-field {
+    height: auto !important;
+    min-height: 80px !important;
 }
 
 .um .um-field-area input.um-form-field:focus,
 .um .um-field-area textarea.um-form-field:focus,
 .um .um-field-area select.um-form-field:focus {
     border-color: var(--um-dark) !important;
-    box-shadow: 0 0 0 3px rgba(50, 50, 50, 0.1) !important;
+    box-shadow: 0 0 0 3px rgba(50, 50, 50, 0.08) !important;
     outline: none !important;
 }
 
-/* ─── Show/hide password icon ────────────────────────────────────── */
-.um .um-field-area .um-icon-rm-visible,
-.um .um-field-area .um-icon-rm-invisible {
-    color: var(--um-light);
-}
-
-/* ─── Submit button ──────────────────────────────────────────────── */
+/* ─── Submit button — uniform across all UM pages ────────────────── */
 .um .um-col-1 .um-button,
 .um .um-col-2 .um-button,
 .um input[type="submit"].um-button,
 .um a.um-button,
 .um button.um-button {
-    display: inline-flex !important;
+    display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 11px 28px !important;
+    width: 100% !important;
+    height: 42px !important;
+    padding: 0 24px !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     font-family: var(--um-font) !important;
@@ -86,12 +86,12 @@
     background: var(--um-dark) !important;
     color: var(--um-white) !important;
     border: none !important;
-    border-radius: var(--um-radius) !important;
+    border-radius: 0 !important;
     box-shadow: none !important;
-    transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
+    transition: background 0.2s, box-shadow 0.2s !important;
     text-decoration: none !important;
-    width: 100% !important;
     box-sizing: border-box !important;
+    line-height: 1 !important;
 }
 
 .um .um-col-1 .um-button:hover,
@@ -100,17 +100,11 @@
 .um a.um-button:hover,
 .um button.um-button:hover {
     background: var(--um-darker) !important;
-    transform: translateY(-1px) !important;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2) !important;
+    transform: none !important;
 }
 
-.um .um-col-1 .um-button:active,
-.um input[type="submit"].um-button:active {
-    transform: translateY(0) !important;
-    box-shadow: none !important;
-}
-
-/* ─── Secondary / alt links ──────────────────────────────────────── */
+/* ─── Links inside forms ─────────────────────────────────────────── */
 .um .um-form a {
     color: var(--um-dark);
     text-decoration: underline;
@@ -120,7 +114,7 @@
     color: var(--um-darker);
 }
 
-/* ─── Error messages ─────────────────────────────────────────────── */
+/* ─── Error & notices ────────────────────────────────────────────── */
 .um .um-field-error {
     font-size: 12px;
     color: #c0392b;
@@ -128,15 +122,16 @@
 }
 
 .um .um-notice {
-    border-radius: var(--um-radius);
+    border-radius: 0 !important;
     font-size: 13px;
 }
 
-/* ─── Header (profile / user page) ──────────────────────────────── */
+/* ─── Header (user / account page) ──────────────────────────────── */
 .um .um-header {
     background: var(--um-bg);
     border-bottom: 1px solid var(--um-border);
     padding: 24px;
+    border-radius: 0 !important;
 }
 
 .um .um-name a {
@@ -153,7 +148,7 @@
 /* ─── Avatar ─────────────────────────────────────────────────────── */
 .um .um-avatar img,
 .um .um-avatar {
-    border-radius: var(--um-radius) !important;
+    border-radius: 0 !important;
     border: 2px solid var(--um-border) !important;
 }
 
@@ -165,15 +160,14 @@
 .um-member-card,
 .um-members .um-member {
     border: 1px solid var(--um-border);
-    border-radius: var(--um-radius);
+    border-radius: 0 !important;
     background: var(--um-white);
-    transition: box-shadow 0.2s, transform 0.15s;
+    transition: box-shadow 0.2s;
 }
 
 .um-member-card:hover,
 .um-members .um-member:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
 }
 
 .um-members .um-member .um-member-name a {
@@ -186,18 +180,24 @@
     color: var(--um-mid);
 }
 
-/* ─── Search / filter bar (members) ─────────────────────────────── */
+.um-members .um-member .um-member-photo img {
+    border-radius: 0 !important;
+}
+
+/* ─── Search / filter (members) ─────────────────────────────────── */
 .um-members-wrapper .um-search-form input[type="text"],
 .um-members-wrapper .um-filter input,
 .um-members-wrapper .um-filter select {
     border: 1.5px solid var(--um-border);
-    border-radius: var(--um-radius);
-    padding: 9px 12px;
+    border-radius: 0;
+    padding: 0 12px;
+    height: 42px;
     font-size: 14px;
     font-family: var(--um-font);
     color: var(--um-darker);
     background: var(--um-white);
     box-shadow: none;
+    box-sizing: border-box;
     transition: border-color 0.15s;
 }
 
@@ -213,12 +213,15 @@
     background: var(--um-dark);
     color: var(--um-white);
     border: none;
-    border-radius: var(--um-radius);
-    padding: 9px 20px;
+    border-radius: 0;
+    height: 42px;
+    padding: 0 20px;
     font-size: 14px;
     font-weight: 600;
+    font-family: var(--um-font);
     cursor: pointer;
     transition: background 0.2s;
+    box-sizing: border-box;
 }
 
 .um-members-wrapper .um-search-form input[type="submit"]:hover,
@@ -229,7 +232,7 @@
 /* ─── Pagination ─────────────────────────────────────────────────── */
 .um-pagination .page-numbers {
     border: 1.5px solid var(--um-border);
-    border-radius: var(--um-radius);
+    border-radius: 0;
     color: var(--um-dark);
     padding: 6px 12px;
     font-size: 13px;
