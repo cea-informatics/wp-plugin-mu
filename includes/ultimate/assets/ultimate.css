@@ -1,254 +1,371 @@
-/* ─── Variables ──────────────────────────────────────────────────── */
+/* ─── Palette du site (Blocksy Foxtown) ──────────────────────────── */
 :root {
-    --um-dark:   #323232;
-    --um-darker: #1a1a1a;
-    --um-mid:    #555555;
-    --um-light:  #888888;
-    --um-border: #d8d8d8;
-    --um-bg:     #f5f5f5;
-    --um-white:  #ffffff;
-    --um-font:   "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --um-primary:  #F67521;
+    --um-dark:     #0a0500;
+    --um-text:     #4b4f49;
+    --um-muted:    #888888;
+    --um-border:   #e0e0e0;
+    --um-field-bg: #F4F4F4;
+    --um-white:    #ffffff;
+    --um-error:    #BD292A;
+    --um-height:   55px;
+    --um-font:     inherit;
 }
 
-/* ─── Global wrapper ─────────────────────────────────────────────── */
-.um {
-    font-family: var(--um-font) !important;
+/* ═══════════════════════════════════════════════════════════════════
+   RESET BORDER-RADIUS — tous les sélecteurs natifs UM
+═══════════════════════════════════════════════════════════════════ */
+p.um-notice,
+.um-field-error,
+.um-error-block,
+.um-field-notice,
+.um-notice-block,
+.um-form input[type="text"],
+.um-form input[type="password"],
+.um-form input[type="email"],
+.um-form input[type="number"],
+.um-form textarea,
+.um-field-group-head,
+.um-field-group-body,
+.um-button,
+a.um-button,
+button.um-button,
+input[type="submit"].um-button,
+.um-dropdown,
+div.um-photo,
+div.um-photo a,
+div.um-photo img,
+.um-item-img img,
+.um-search-filter .select2.select2-container .select2-selection,
+.um-modal,
+.um-modal .um-modal-body,
+.um-modal .um-modal-header,
+.um-modal-body.photo,
+.um-modal-body.photo img,
+.um-modal-header,
+.um-popup,
+.um-account-meta img,
+.um-account-meta.radius-1 img,
+.um-account-meta.radius-2 img,
+.um-account-meta.radius-3 img,
+div.uimob800 .um-account-side ul,
+div.uimob800 .um-account-side li:first-child a,
+div.uimob800 .um-account-side li:last-child a,
+.um-avatar img,
+.um .um-avatar,
+.um-member-card,
+.um-members .um-member,
+.um-members .um-member .um-member-photo img,
+.um-pagination .page-numbers {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius:    0 !important;
+    border-radius:         0 !important;
 }
 
-/* ─── Form container ─────────────────────────────────────────────── */
-.um .um-form {
-    background: var(--um-white);
-    border: 1px solid var(--um-border);
-    border-radius: 0 !important;
-    padding: 32px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-}
-
-/* ─── Fields ─────────────────────────────────────────────────────── */
-.um .um-field {
-    margin-bottom: 16px;
-}
-
-.um .um-field-label label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--um-darker);
-    letter-spacing: 0.2px;
-}
-
+/* ═══════════════════════════════════════════════════════════════════
+   CHAMPS — style Blocksy classic forms
+═══════════════════════════════════════════════════════════════════ */
 .um .um-field-area input.um-form-field,
 .um .um-field-area textarea.um-form-field,
-.um .um-field-area select.um-form-field {
-    border: 1.5px solid var(--um-border) !important;
+.um .um-field-area select.um-form-field,
+.um-form input[type="text"],
+.um-form input[type="password"],
+.um-form input[type="email"],
+.um-form input[type="number"],
+.um-form textarea {
+    background:  var(--um-field-bg) !important;
+    border:      2px solid var(--um-field-bg) !important;
     border-radius: 0 !important;
-    padding: 10px 12px !important;
-    font-size: 14px !important;
+    height:      var(--um-height) !important;
+    padding:     0 16px !important;
+    font-size:   15px !important;
     font-family: var(--um-font) !important;
-    color: var(--um-darker) !important;
-    background: var(--um-white) !important;
-    box-shadow: none !important;
-    transition: border-color 0.15s, box-shadow 0.15s !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    height: 42px !important;
+    color:       var(--um-text) !important;
+    box-shadow:  none !important;
+    transition:  border-color 0.2s !important;
+    width:       100% !important;
+    box-sizing:  border-box !important;
 }
 
-.um .um-field-area textarea.um-form-field {
-    height: auto !important;
-    min-height: 80px !important;
+.um .um-field-area textarea.um-form-field,
+.um-form textarea {
+    height:     auto !important;
+    min-height: 120px !important;
+    padding:    12px 16px !important;
 }
 
 .um .um-field-area input.um-form-field:focus,
 .um .um-field-area textarea.um-form-field:focus,
-.um .um-field-area select.um-form-field:focus {
-    border-color: var(--um-dark) !important;
-    box-shadow: 0 0 0 3px rgba(50, 50, 50, 0.08) !important;
-    outline: none !important;
+.um .um-field-area select.um-form-field:focus,
+.um-form input[type="text"]:focus,
+.um-form input[type="password"]:focus,
+.um-form input[type="email"]:focus,
+.um-form input[type="number"]:focus,
+.um-form textarea:focus {
+    border-color: var(--um-primary) !important;
+    background:   var(--um-field-bg) !important;
+    outline:      none !important;
+    box-shadow:   none !important;
 }
 
-/* ─── Submit button — uniform across all UM pages ────────────────── */
+/* Label */
+.um .um-field-label label {
+    font-size:   13px;
+    font-weight: 600;
+    color:       var(--um-dark);
+    letter-spacing: 0.1px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BOUTONS — identiques au bouton du thème
+═══════════════════════════════════════════════════════════════════ */
 .um .um-col-1 .um-button,
 .um .um-col-2 .um-button,
 .um input[type="submit"].um-button,
 .um a.um-button,
-.um button.um-button {
-    display: flex !important;
-    align-items: center !important;
+.um button.um-button,
+.um-button {
+    display:         flex !important;
+    align-items:     center !important;
     justify-content: center !important;
-    width: 100% !important;
-    height: 42px !important;
-    padding: 0 24px !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    font-family: var(--um-font) !important;
-    letter-spacing: 0.2px !important;
-    cursor: pointer !important;
-    background: var(--um-dark) !important;
-    color: var(--um-white) !important;
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    transition: background 0.2s, box-shadow 0.2s !important;
+    width:           100% !important;
+    min-height:      var(--um-height) !important;
+    height:          var(--um-height) !important;
+    padding:         0 24px !important;
+    font-size:       15px !important;
+    font-weight:     500 !important;
+    font-family:     var(--um-font) !important;
+    cursor:          pointer !important;
+    background:      var(--um-dark) !important;
+    color:           var(--um-white) !important;
+    border:          none !important;
+    border-radius:   0 !important;
+    box-shadow:      none !important;
+    transition:      background 0.2s !important;
     text-decoration: none !important;
-    box-sizing: border-box !important;
-    line-height: 1 !important;
+    box-sizing:      border-box !important;
+    line-height:     1 !important;
+    letter-spacing:  0 !important;
 }
 
 .um .um-col-1 .um-button:hover,
 .um .um-col-2 .um-button:hover,
 .um input[type="submit"].um-button:hover,
 .um a.um-button:hover,
-.um button.um-button:hover {
-    background: var(--um-darker) !important;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2) !important;
-    transform: none !important;
+.um button.um-button:hover,
+.um-button:hover {
+    background:  var(--um-primary) !important;
+    color:       var(--um-white) !important;
+    box-shadow:  none !important;
+    transform:   none !important;
 }
 
-/* ─── Links inside forms ─────────────────────────────────────────── */
-.um .um-form a {
-    color: var(--um-dark);
-    text-decoration: underline;
-}
-
-.um .um-form a:hover {
-    color: var(--um-darker);
-}
-
-/* ─── Error & notices ────────────────────────────────────────────── */
-.um .um-field-error {
-    font-size: 12px;
-    color: #c0392b;
-    margin-top: 4px;
-}
-
-.um .um-notice {
+/* ═══════════════════════════════════════════════════════════════════
+   NOTICES & ERREURS
+═══════════════════════════════════════════════════════════════════ */
+.um .um-field-error,
+.um-field-error {
+    font-size:   12px;
+    color:       var(--um-error);
+    margin-top:  4px;
     border-radius: 0 !important;
-    font-size: 13px;
 }
 
-/* ─── Header (user / account page) ──────────────────────────────── */
+p.um-notice,
+.um-notice,
+.um-error-block,
+.um-field-notice,
+.um-notice-block {
+    border-radius: 0 !important;
+    font-size: 14px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SELECT2 (members filter)
+═══════════════════════════════════════════════════════════════════ */
+.um-search-filter .select2.select2-container .select2-selection,
+.um-search-filter .select2-container.select2-container--open .select2-dropdown {
+    border-radius: 0 !important;
+    border: 2px solid var(--um-field-bg) !important;
+    background: var(--um-field-bg) !important;
+    height: var(--um-height) !important;
+}
+
+.um-search-filter .select2.select2-container .select2-selection:focus,
+.um-search-filter .select2-container--focus .select2-selection {
+    border-color: var(--um-primary) !important;
+    outline: none !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   LIENS
+═══════════════════════════════════════════════════════════════════ */
+.um .um-form a,
+.um-page a.um-link {
+    color: var(--um-primary);
+    text-decoration: none;
+}
+
+.um .um-form a:hover,
+.um-page a.um-link:hover {
+    color: var(--um-error);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PROFIL / USER / ACCOUNT
+═══════════════════════════════════════════════════════════════════ */
 .um .um-header {
-    background: var(--um-bg);
-    border-bottom: 1px solid var(--um-border);
-    padding: 24px;
-    border-radius: 0 !important;
+    border-bottom: 2px solid var(--um-field-bg);
 }
 
 .um .um-name a {
-    color: var(--um-darker);
+    color:       var(--um-dark);
     font-weight: 700;
-    font-size: 1.1rem;
     text-decoration: none;
 }
 
 .um .um-name a:hover {
-    color: var(--um-mid);
+    color: var(--um-primary);
 }
 
-/* ─── Avatar ─────────────────────────────────────────────────────── */
 .um .um-avatar img,
 .um .um-avatar {
     border-radius: 0 !important;
     border: 2px solid var(--um-border) !important;
 }
 
-/* ─── Members directory ──────────────────────────────────────────── */
-.um-members-wrapper {
-    font-family: var(--um-font);
+div.um-photo,
+div.um-photo a,
+div.um-photo img,
+.um-item-img img {
+    border-radius: 0 !important;
 }
 
+/* Onglets account */
+.um-account-side ul {
+    border-radius: 0 !important;
+}
+
+.um-account-side li a {
+    border-radius: 0 !important;
+    transition: background 0.15s, color 0.15s;
+}
+
+.um-account-side li.active a,
+.um-account-side li a:hover {
+    background: var(--um-dark) !important;
+    color:      var(--um-white) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   MEMBERS DIRECTORY
+═══════════════════════════════════════════════════════════════════ */
 .um-member-card,
 .um-members .um-member {
-    border: 1px solid var(--um-border);
+    border:        1px solid var(--um-border);
     border-radius: 0 !important;
-    background: var(--um-white);
-    transition: box-shadow 0.2s;
+    background:    var(--um-white);
+    transition:    box-shadow 0.2s;
 }
 
 .um-member-card:hover,
 .um-members .um-member:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .um-members .um-member .um-member-name a {
-    color: var(--um-darker);
-    font-weight: 600;
+    color:           var(--um-dark);
+    font-weight:     600;
     text-decoration: none;
 }
 
 .um-members .um-member .um-member-name a:hover {
-    color: var(--um-mid);
+    color: var(--um-primary);
 }
 
 .um-members .um-member .um-member-photo img {
     border-radius: 0 !important;
 }
 
-/* ─── Search / filter (members) ─────────────────────────────────── */
+/* Barre de recherche members */
 .um-members-wrapper .um-search-form input[type="text"],
 .um-members-wrapper .um-filter input,
 .um-members-wrapper .um-filter select {
-    border: 1.5px solid var(--um-border);
+    background:  var(--um-field-bg);
+    border:      2px solid var(--um-field-bg);
     border-radius: 0;
-    padding: 0 12px;
-    height: 42px;
-    font-size: 14px;
-    font-family: var(--um-font);
-    color: var(--um-darker);
-    background: var(--um-white);
-    box-shadow: none;
-    box-sizing: border-box;
-    transition: border-color 0.15s;
+    height:      var(--um-height);
+    padding:     0 16px;
+    font-size:   15px;
+    box-shadow:  none;
+    box-sizing:  border-box;
+    transition:  border-color 0.2s;
 }
 
 .um-members-wrapper .um-search-form input[type="text"]:focus,
 .um-members-wrapper .um-filter input:focus,
 .um-members-wrapper .um-filter select:focus {
-    border-color: var(--um-dark);
-    outline: none;
+    border-color: var(--um-primary);
+    outline:      none;
 }
 
 .um-members-wrapper .um-search-form input[type="submit"],
 .um-members-wrapper .um-filter input[type="submit"] {
-    background: var(--um-dark);
-    color: var(--um-white);
-    border: none;
+    background:    var(--um-dark);
+    color:         var(--um-white);
+    border:        none;
     border-radius: 0;
-    height: 42px;
-    padding: 0 20px;
-    font-size: 14px;
-    font-weight: 600;
-    font-family: var(--um-font);
-    cursor: pointer;
-    transition: background 0.2s;
-    box-sizing: border-box;
+    height:        var(--um-height);
+    padding:       0 24px;
+    font-size:     15px;
+    font-weight:   500;
+    cursor:        pointer;
+    transition:    background 0.2s;
+    box-sizing:    border-box;
 }
 
 .um-members-wrapper .um-search-form input[type="submit"]:hover,
 .um-members-wrapper .um-filter input[type="submit"]:hover {
-    background: var(--um-darker);
+    background: var(--um-primary);
 }
 
-/* ─── Pagination ─────────────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════════
+   PAGINATION
+═══════════════════════════════════════════════════════════════════ */
 .um-pagination .page-numbers {
-    border: 1.5px solid var(--um-border);
+    border:        2px solid var(--um-border);
     border-radius: 0;
-    color: var(--um-dark);
-    padding: 6px 12px;
-    font-size: 13px;
-    font-weight: 500;
+    color:         var(--um-text);
+    padding:       8px 14px;
+    font-size:     13px;
+    font-weight:   500;
     text-decoration: none;
-    transition: background 0.15s, color 0.15s;
+    transition:    background 0.15s, color 0.15s, border-color 0.15s;
 }
 
 .um-pagination .page-numbers.current,
 .um-pagination .page-numbers:hover {
-    background: var(--um-dark);
+    background:   var(--um-dark);
     border-color: var(--um-dark);
-    color: var(--um-white);
+    color:        var(--um-white);
 }
 
-/* ─── Responsive ─────────────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════════
+   MODAL
+═══════════════════════════════════════════════════════════════════ */
+.um-modal,
+.um-modal .um-modal-body,
+.um-modal .um-modal-header,
+.um-modal-body.photo,
+.um-modal-body.photo img,
+.um-modal-header,
+.um-popup {
+    border-radius: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════════ */
 @media (max-width: 600px) {
     .um .um-form {
         padding: 20px 16px;
