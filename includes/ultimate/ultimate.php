@@ -33,9 +33,9 @@ function wpmu_render_user_header() {
     <script>
     document.addEventListener('DOMContentLoaded', function () {
         var badge = document.getElementById('wpmu-user-badge');
-        var search = document.querySelector('[data-device="desktop"] .ct-header-search');
-        if (search && badge) {
-            search.insertAdjacentElement('beforebegin', badge);
+        var parking = document.getElementById('wpw-parking-badge');
+        if (parking && badge) {
+            parking.insertAdjacentElement('afterend', badge);
             badge.style.display = 'flex';
         }
     });
