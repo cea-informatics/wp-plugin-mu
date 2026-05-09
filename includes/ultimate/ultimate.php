@@ -31,14 +31,27 @@ function wpmu_render_user_header() {
         <?php endif; ?>
     </div>
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var badge = document.getElementById('wpmu-user-badge');
-        var parking = document.getElementById('wpw-parking-badge');
-        if (parking && badge) {
-            parking.insertAdjacentElement('afterend', badge);
-            badge.style.display = 'flex';
+    (function () {
+        function positionBadge() {
+            var badge = document.getElementById('wpmu-user-badge');
+            var parking = document.getElementById('wpw-parking-badge');
+            if (parking && badge) {
+                parking.insertAdjacentElement('afterend', badge);
+                badge.style.display = 'flex';
+                return true;
+            }
+            return false;
         }
-    });
+
+        if (!positionBadge()) {
+            var observer = new MutationObserver(function () {
+                if (positionBadge()) {
+                    observer.disconnect();
+                }
+            });
+            observer.observe(document.body, { childList: true, subtree: true });
+        }
+    })();
     </script>
     <?php
 }
