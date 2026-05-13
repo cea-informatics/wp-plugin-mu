@@ -3,7 +3,7 @@
 /**
  * Plugin Name:     Must Use Plugin
  * Description:     A plugin in addition to the mu-plugins directory
- * Version:         1.2.4
+ * Version:         1.2.5
  * Author:          CEA Informatics
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html

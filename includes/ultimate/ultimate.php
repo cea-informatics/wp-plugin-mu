@@ -27,7 +27,7 @@ function wpmu_render_user_header() {
 </defs>
 </svg>
         <?php else : ?>
-            <a href="<?php echo esc_url(wp_login_url(get_permalink())); ?>" style="font-family: sans-serif; font-size: 15px; font-weight: 600; text-decoration: none;">Login</a>
+            <a href="/login" style="font-family: sans-serif; font-size: 15px; font-weight: 600; text-decoration: none;">Login</a>
         <?php endif; ?>
     </div>
     <script>
@@ -49,7 +49,7 @@ function wpmu_render_user_header() {
                     observer.disconnect();
                 }
             });
-            observer.observe(document.body, { childList: true, subtree: true });
+            observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['id'] });
         }
     })();
     </script>
