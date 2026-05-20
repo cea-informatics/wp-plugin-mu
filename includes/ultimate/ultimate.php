@@ -13,7 +13,7 @@ function wpum_enqueue_styles() {
 
 add_action('wp_enqueue_scripts', 'wpum_enqueue_styles');
 
-function wpmu_render_user_header() {
+function wpmu_render_user_badge() {
     ?>
     <div id="wpmu-user-badge" style="display: none; align-items: center;">
         <?php if (is_user_logged_in()) : ?>
@@ -30,6 +30,12 @@ function wpmu_render_user_header() {
             <a href="/login" style="font-family: sans-serif; font-size: 15px; font-weight: 600; text-decoration: none;">Login</a>
         <?php endif; ?>
     </div>
+    <?php
+}
+add_action('wp_footer', 'wpmu_render_user_badge');
+
+function wpmu_render_user_badge_script() {
+    ?>
     <script>
     (function () {
         function positionBadge() {
@@ -43,16 +49,18 @@ function wpmu_render_user_header() {
             return false;
         }
 
-        if (!positionBadge()) {
-            var observer = new MutationObserver(function () {
-                if (positionBadge()) {
-                    observer.disconnect();
-                }
-            });
-            observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['id'] });
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!positionBadge()) {
+                var observer = new MutationObserver(function () {
+                    if (positionBadge()) {
+                        observer.disconnect();
+                    }
+                });
+                observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['id'] });
+            }
+        });
     })();
     </script>
     <?php
 }
-add_action('wp_footer', 'wpmu_render_user_header');
+add_action('wp_head', 'wpmu_render_user_badge_script');
